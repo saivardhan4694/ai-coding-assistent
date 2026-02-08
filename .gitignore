@@ -1,0 +1,6 @@
+# Environment variables (contains API keys and secrets)
+.env
+
+# Python
+__pycache__
+.venv/

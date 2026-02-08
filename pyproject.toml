@@ -1,0 +1,20 @@
+[project]
+name = "ai-coding-assistent"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "click>=8.3.1",
+    "ddgs>=9.10.0",
+    "duckduckgo-search>=8.1.1",
+    "fastmcp>=2.14.5",
+    "httpx>=0.28.1",
+    "openai>=2.16.0",
+    "platformdirs>=4.5.1",
+    "pydantic>=2.12.5",
+    "python-dotenv>=1.2.1",
+    "rich>=14.3.2",
+    "tiktoken>=0.12.0",
+    "tomli>=2.4.0",
+]
