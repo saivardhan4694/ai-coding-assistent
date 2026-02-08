@@ -1,11 +1,11 @@
-# 🤖 AI Coding Assistant
+# AI Coding Assistant
 
 > A powerful, extensible AI agent framework with advanced tool-calling capabilities, context management, and Model Context Protocol (MCP) integration.
 
 [![Python Version](https://img.shields.io/badge/python-3.14%2B-blue.svg)](https://www.python.org/downloads/)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
-## 📋 Table of Contents
+## Table of Contents
 
 - [Overview](#overview)
 - [Key Features](#key-features)
@@ -18,23 +18,23 @@
 - [Advanced Features](#advanced-features)
 - [Contributing](#contributing)
 
-## 🎯 Overview
+## Overview
 
 AI Coding Assistant is a sophisticated AI agent framework designed to interact with code, files, and external services through a powerful tool-calling system. Built with Python and leveraging state-of-the-art LLMs (Google Gemini, OpenAI, OpenRouter), it provides an intelligent CLI interface for developers to automate tasks, analyze codebases, and build AI-powered workflows.
 
 ### What Makes This Different?
 
-- **🔌 MCP Integration**: Full support for Model Context Protocol servers with stdio and HTTP/SSE transports
-- **🎛️ Advanced Context Management**: Intelligent context compression and token management
-- **🛡️ Safety-First Design**: Multiple approval policies and dangerous command detection
-- **🔄 Session Persistence**: Save, resume, and checkpoint conversations
-- **🎨 Rich Terminal UI**: Beautiful, interactive terminal interface with real-time streaming
-- **🔧 Extensible Tool System**: Easy-to-extend plugin architecture for custom tools
-- **🤖 Subagent Support**: Specialized subagents for complex, multi-step tasks
+- **MCP Integration**: Full support for Model Context Protocol servers with stdio and HTTP/SSE transports
+- **Advanced Context Management**: Intelligent context compression and token management
+- **Safety-First Design**: Multiple approval policies and dangerous command detection
+- **Session Persistence**: Save, resume, and checkpoint conversations
+- **Rich Terminal UI**: Beautiful, interactive terminal interface with real-time streaming
+- **Extensible Tool System**: Easy-to-extend plugin architecture for custom tools
+- **Subagent Support**: Specialized subagents for complex, multi-step tasks
 
-## ✨ Key Features
+## Key Features
 
-### 🚀 Core Functionality
+### Core Functionality
 
 | Feature | Description |
 |---------|-------------|
@@ -48,15 +48,15 @@ AI Coding Assistant is a sophisticated AI agent framework designed to interact w
 
 The agent comes with 12+ production-ready tools:
 
-- **📁 File Operations**: `read_file`, `write_file`, `edit_file`
-- **📂 Directory Management**: `list_dir`, `glob` (pattern matching)
-- **🔍 Search Capabilities**: `grep` (regex pattern search)
-- **💻 Shell Execution**: `shell` (execute system commands)
-- **🌐 Web Access**: `web_search`, `web_fetch`
-- **🧠 Memory System**: `memory` (persistent knowledge storage)
-- **✅ Task Management**: `todo` (task list management)
+- **File Operations**: `read_file`, `write_file`, `edit_file`
+- **Directory Management**: `list_dir`, `glob` (pattern matching)
+- **Search Capabilities**: `grep` (regex pattern search)
+- **Shell Execution**: `shell` (execute system commands)
+- **Web Access**: `web_search`, `web_fetch`
+- **Memory System**: `memory` (persistent knowledge storage)
+- **Task Management**: `todo` (task list management)
 
-### 🎯 Advanced Systems
+### Advanced Systems
 
 #### Context Management
 - **Automatic Context Compression**: Intelligently manages token limits
@@ -73,7 +73,7 @@ Multiple approval policies for different use cases:
 | `auto` | Auto-approves safe operations, requests for dangerous ones |
 | `auto-edit` | Auto-approves file edits, requests for shell commands |
 | `never` | Always requests approval |
-| `yolo` | Never requests approval (⚠️ use with caution) |
+| `yolo` | Never requests approval (use with caution) |
 
 #### Session Management
 - **Save Sessions**: Persist entire conversation state
@@ -108,24 +108,24 @@ Execute custom scripts at key lifecycle points:
 - **Custom Subagents**: Define your own with custom prompts and tools
 - **Resource Limits**: Control token usage and execution time per subagent
 
-## 🏗️ Architecture
+## Architecture
 
 ```
 ┌─────────────────────────────────────────────────────┐
-│                    CLI Interface                     │
-│                   (main.py, ui/)                     │
+│                    CLI Interface                    │
+│                   (main.py, ui/)                    │
 └──────────────────────┬──────────────────────────────┘
                        │
 ┌──────────────────────▼──────────────────────────────┐
-│                  Agent Core                          │
-│              (agent/agent.py)                        │
-│  ┌──────────────┐  ┌──────────────┐                │
-│  │   Session    │  │Context Mgr   │                │
-│  │  Management  │  │& Compression │                │
-│  └──────────────┘  └──────────────┘                │
-│  ┌──────────────┐  ┌──────────────┐                │
-│  │Loop Detector │  │  Persistence │                │
-│  └──────────────┘  └──────────────┘                │
+│                  Agent Core                         │
+│              (agent/agent.py)                       │
+│  ┌──────────────┐  ┌──────────────┐                 │
+│  │   Session    │  │Context Mgr   │                 │
+│  │  Management  │  │& Compression │                 │
+│  └──────────────┘  └──────────────┘                 │
+│  ┌──────────────┐  ┌──────────────┐                 │
+│  │Loop Detector │  │  Persistence │                 │
+│  └──────────────┘  └──────────────┘                 │
 └──────────────────────┬──────────────────────────────┘
                        │
         ┌──────────────┼──────────────┐
@@ -136,15 +136,15 @@ Execute custom scripts at key lifecycle points:
 └───────┬────────┘ └───────────┘ └──┬────────┘
         │                            │
 ┌───────▼────────────────────────────▼────────┐
-│            External Services                 │
-│  ┌──────────┐  ┌──────────┐  ┌──────────┐  │
-│  │File Ops  │  │  Shell   │  │MCP Server│  │
-│  │          │  │  Executor│  │          │  │
-│  └──────────┘  └──────────┘  └──────────┘  │
-│  ┌──────────┐  ┌──────────┐                │
-│  │  Web     │  │  Memory  │                │
-│  │  Access  │  │  Storage │                │
-│  └──────────┘  └──────────┘                │
+│            External Services                │
+│  ┌──────────┐  ┌──────────┐  ┌──────────┐   │
+│  │File Ops  │  │  Shell   │  │MCP Server│   │
+│  │          │  │  Executor│  │          │   │
+│  └──────────┘  └──────────┘  └──────────┘   │
+│  ┌──────────┐  ┌──────────┐                 │
+│  │  Web     │  │  Memory  │                 │
+│  │  Access  │  │  Storage │                 │
+│  └──────────┘  └──────────┘                 │
 └─────────────────────────────────────────────┘
 ```
 
@@ -162,7 +162,7 @@ Execute custom scripts at key lifecycle points:
 | **MCP Manager** | Manages connections to MCP servers |
 | **Hooks System** | Executes custom scripts at lifecycle events |
 
-## 📦 Installation
+## Installation
 
 ### Prerequisites
 
@@ -238,7 +238,7 @@ python main.py
 python main.py "What files are in the current directory?"
 ```
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Interactive Mode
 
@@ -290,7 +290,7 @@ python main.py "Create a README.md file with project documentation"
 python main.py --cwd /path/to/your/project "Analyze the codebase structure"
 ```
 
-## ⚙️ Configuration
+## Configuration
 
 The agent can be configured via:
 
@@ -374,7 +374,7 @@ Write unit tests for all new functions.
 | `/stats` | Display session statistics | `/stats` |
 | `/clear` | Clear conversation history | `/clear` |
 
-## 💻 Usage
+## Usage
 
 ### Available Commands
 
@@ -543,7 +543,7 @@ $ python main.py
 [user]> /restore <checkpoint-id>
 ```
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! Here's how you can help:
 
@@ -573,18 +573,18 @@ ruff format .
 ruff check .
 ```
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - Built with [OpenAI API](https://openai.com/api/) and [Google Gemini](https://ai.google.dev/)
 - MCP integration powered by [Model Context Protocol](https://modelcontextprotocol.io/)
 - Terminal UI with [Rich](https://rich.readthedocs.io/)
 - CLI framework using [Click](https://click.palletsprojects.com/)
 
-## 📞 Support
+## Support
 
 - **Issues**: [GitHub Issues](https://github.com/yourusername/ai-coding-assistent/issues)
 - **Discussions**: [GitHub Discussions](https://github.com/yourusername/ai-coding-assistent/discussions)
@@ -592,5 +592,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ---
 
 <div align="center">
-Made with ❤️ by developers, for developers
+Made by developers, for developers
 </div>
